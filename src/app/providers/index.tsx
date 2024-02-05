@@ -1,10 +1,15 @@
 
 import { ThemeProvider } from "styled-components";
-import Theme from "@/app/styles/Theme";
+import { GlobalStyle, Theme } from "@/app/styles";
 
 const Provider = ({ children }: React.PropsWithChildren) => {
 
-    return <ThemeProvider theme={Theme}>{children}</ThemeProvider>
+    return (
+        <ThemeProvider theme={Theme}>
+            <GlobalStyle />
+            {children}
+        </ThemeProvider>
+    )
 
 }
 

@@ -1,4 +1,4 @@
-const Theme = {
+export const Theme = {
   color: {
     background: "#96ABBE",
     primary: {
@@ -10,6 +10,7 @@ const Theme = {
       contrastText: "#358C84FA",
     },
     black: "#000000",
+    white: "#FFFFFF",
   },
   font: {
     xs: "0.5rem",
@@ -18,6 +19,9 @@ const Theme = {
     lg: "1.25rem",
     bigger: "1.5rem",
   },
+  family: {
+    title: 'Almarai, sans-serif',
+    base: 'Alata, sans-serif',
+    details: 'Comfortaa, sans-serif'
+  }
 };
-
-export default Theme;
