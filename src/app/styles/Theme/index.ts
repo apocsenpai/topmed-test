@@ -5,19 +5,20 @@ export const Theme = {
       main: "#358C84FA",
       contrastText: "#FFFBFB",
     },
-    secundary: {
+    secondary: {
       main: "#FFFFFF",
       contrastText: "#358C84FA",
     },
     black: "#000000",
     white: "#FFFFFF",
+    blue: "#284F72"
   },
   font: {
-    xs: "0.5rem",
-    sm: "0.625rem",
+    xs: "0.625rem",
+    sm: "0.75rem",
     md: "1rem",
     lg: "1.25rem",
-    bigger: "1.5rem",
+    xl: "1.5rem",
   },
   family: {
     title: 'Almarai, sans-serif',
