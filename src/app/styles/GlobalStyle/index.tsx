@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
@@ -47,4 +47,38 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+`;
+
+export const Container = styled.div`
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  min-height: 100dvh;
+  padding-top: 7.5rem;
+  background-color: ${({ theme }) => theme.color.background};
+`;
+
+export const Main = styled.main`
+  display: flex;
+  background-color: ${({ theme }) => theme.color.white};
+  border-radius: 0.75rem;
+  overflow: hidden;
+`;
+
+export const WhiteBox = styled.aside`
+  padding: 3rem 1.5rem 1.125rem;
+`;
+
+export const GreenBox = styled.aside`
+  width: 12.5rem;
+  padding: 3rem 0.75rem 0 1.5rem;
+  background-color: ${({ theme }) => theme.color.primary.main};
+  box-shadow: 4px 0px 4px 0px #00000040 inset;
+`;
+
+export const ErrorMessage = styled.span`
+  font-size: ${({ theme }) => theme.font.xs};
+  font-family: ${({ theme }) => theme.family.base};
+  color: ${({ theme }) => theme.color.danger};
 `;
