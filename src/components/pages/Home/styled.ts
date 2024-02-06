@@ -162,14 +162,14 @@ export const Box = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.125rem;
   margin-top: 2rem;
 `;
 
 export const Circle = styled.div`
   width: 2rem;
   height: 2rem;
-  border-radius: 100%;
+  border-radius: 50%;
   border: 1px solid ${({ theme }) => `${theme.color.blue}`};
 
   color: ${({ theme }) => `${theme.color.primary.contrastText}`};

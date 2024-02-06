@@ -4,8 +4,32 @@ import { MdLinkedCamera } from "react-icons/md";
 import TopMed from "@/assets/topmed_logo.svg";
 import NextPlus from "@/assets/nextplus-logo.svg";
 import Sound from "@/assets/sound.svg";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { signIn } from "@/services";
+
+interface Inputs {
+    email: string
+    password: string
+}
 
 function Home() {
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<Inputs>()
+
+    const onSubmit: SubmitHandler<Inputs> = async (data) => {
+        try {
+            const token = await signIn(data);
+
+            console.log(token)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return <Container>
         <Main>
             <WhiteBox>
@@ -13,14 +37,14 @@ function Home() {
                     <Title>Bem Vindo,</Title>
                     <Paragraph>Faça login para continuar.</Paragraph>
                 </TitleHeader>
-                <Form>
+                <Form onSubmit={handleSubmit(onSubmit)}>
                     <InputGroup>
                         <fieldset>
-                            <Input placeholder="Usuário" />
+                            <Input placeholder="Usuário" {...register("email", {required: true})} />
                             <IoMdPerson />
                         </fieldset>
                         <fieldset>
-                            <Input placeholder="Senha" type="password" />
+                            <Input placeholder="Senha" type="password" {...register("password", {required: true})} />
                             <IoIosLock />
                         </fieldset>
 
@@ -53,7 +77,7 @@ function Home() {
                 </Box>
 
                 <Box>
-                        <Button $colorKey="secondary">Realizar Teste</Button>
+                    <Button $colorKey="secondary">Realizar Teste</Button>
                 </Box>
             </GreenBox>
         </Main>
