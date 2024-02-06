@@ -21,8 +21,8 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
     box-sizing: border-box;
-	font-family: 'Raleway';
-	font-weight: 500;
+	font-family: 'Alata';
+	font-weight: 400;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,

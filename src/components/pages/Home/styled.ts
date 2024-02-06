@@ -17,6 +17,10 @@ interface IButton {
   $colorKey?: "primary" | "secondary";
 }
 
+interface IInput {
+  $error: boolean;
+}
+
 export const Container = styled.div`
   display: flex;
   align-items: start;
@@ -86,17 +90,24 @@ export const InputGroup = styled.div`
   }
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<IInput>`
   width: 12.5rem;
   height: 1.5rem;
   border: none;
-  border-bottom: 1px solid #00000038;
+  border-bottom: 1px solid
+    ${({ theme, $error = false }) =>
+      $error ? theme.color.danger : "#00000038"};
+  color: ${({ theme, $error = false }) => theme.color[$error ? "danger" : "black"]};
   outline: none;
   font-size: ${({ theme }) => theme.font.sm};
   padding-left: 2rem;
 
   ::placeholder {
     font-family: ${({ theme }) => theme.family.base};
+  }
+
+  & ~ svg {
+    color: ${({ theme, $error = false }) => theme.color[$error ? "danger" : "black"]};
   }
 `;
 
@@ -177,4 +188,10 @@ export const Circle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const ErrorMessage = styled.span`
+  font-size: ${({ theme }) => theme.font.xs};
+  font-family: ${({ theme }) => theme.family.base};
+  color: ${({ theme }) => theme.color.danger};
 `;

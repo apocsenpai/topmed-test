@@ -11,7 +11,8 @@ export const Theme = {
     },
     black: "#000000",
     white: "#FFFFFF",
-    blue: "#284F72"
+    blue: "#284F72",
+    danger: "#DC3545"
   },
   font: {
     xs: "0.625rem",
