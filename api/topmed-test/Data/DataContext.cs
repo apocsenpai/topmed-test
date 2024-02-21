@@ -14,6 +14,15 @@ namespace topmed_test.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            modelBuilder.Entity<User>()
+                .Property(c => c.Id)
+                .HasDefaultValueSql("newsequentialid()");
+
+            modelBuilder.Entity<LoginAttempt>()
+                .Property(c => c.Id)
+                .HasDefaultValueSql("newsequentialid()");
+
             modelBuilder.Entity<User>()
                 .HasAlternateKey(u => u.Email);
 
