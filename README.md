@@ -37,11 +37,36 @@ a mesma conta três vezes em um espaço de 20 minutos.
 
 ## Requirements
 
-Para rodar esse projeto, voce deverá ter instalado [Git](https://git-scm.com), [Node 20.9.0 - LTS, npm](https://nodejs.org/en), <undercontruction>
+Para rodar esse projeto, voce deverá ter instalado [Git](https://git-scm.com), [Node 20.9.0 - LTS, npm](https://nodejs.org/en), [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/?cid=learn-onpage-download-cta) versão 17.8 ou posterior com a carga de trabalho ASP.NET e desenvolvimento Web instalada.
 
 ```bash
-  under construction
+# Clone esse repositório
+$ git clone git@github.com:apocsenpai/topmed-test.git
+
+# Entre na pasta do projeto
+$ cd topmed-test
 ```
+##### Backend
+> Siga as instruções abaixo e, antes de iniciar API, lembre de configurar o CORS com a URL da sua aplicação frontend no arquivo Program.cs (abaixo). O Vite roda por default na porta 5173, mas fique a vontade para alterar se necessário.
+
+![image](https://github.com/apocsenpai/topmed-test/assets/87510640/61d672d0-5070-421f-a837-0d4a68f39131)
+
+[screen-recorder-wed-feb-07-2024-01-12-36.webm](https://github.com/apocsenpai/topmed-test/assets/87510640/50c4ac57-8f8f-416c-a3ec-cf18643c1dce)
+
+##### Frontend
+```bash
+# Na pasta raiz do projeto
+$ cd client
+
+# Instale as depedências
+$ npm i
+
+# Edite o arquivo .env com a URL que está rodando o backend encontrada no arquivo launchSettings.json na parta Properties (Imagem abaixo).
+
+# Iniciar a aplicação
+$ npm run dev
+```
+![image](https://github.com/apocsenpai/topmed-test/assets/87510640/fac692ef-b55a-4507-ab3c-561de1e1eeb6)
 
 ### Contact me
 
